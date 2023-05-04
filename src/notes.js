@@ -1,0 +1,3 @@
+let notes = [{ id: 0, title: "Midnight Reflections 2", content: "A haunting melody on a piano, played slowly and with great emotion. The sound of distant sirens, echoing through the night...echoing...echoing..."},{ id: 1, title: "Midnight Reflections", content: "A haunting melody on a piano, played slowly and with great emotion. The sound of distant sirens, echoing through the night."},{ id: 2, title: "Lost in the Wilderness", content: "A haunting melody on a piano,"},{ id: 3, title: "Oceanic Dreams", content: "The gentle lapping of waves against the shore, creating a soothing rhythm."}]
+
+export default notes;

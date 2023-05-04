@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=McLaren&family=Nunito&display=swap');
+
+body {
+    margin: 0;
+    background: #f5f5f5;
+    min-height: 100vh;
+    position: relative;
+}
+
+.sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f5ce4d;
+    width: 50px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    box-shadow: 2px 1px 5px rgba(102, 102, 102, 0.4);
+}
+
+.logo_container {
+    margin: 17px 0;
+    padding: 2px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    transform: rotate(-5deg);
+}
+
+img {
+    width: 100%;
+}
+
+.addIcon_container {
+    cursor: pointer;
+    background-color: #f5f5f5;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 100%;
+    transition: transform 0.3s ease;
+}
+.addIcon_container:hover {
+    transform: rotate(45deg);
+}
+.addIcon_container::before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.notes_container{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left:50px;
+    padding-bottom: 35px;
+}
+
+.note{
+    display: inline-block;
+    width: 200px;
+    margin: 30px 0 0 30px ;
+    padding: 20px;
+    background-color: rgb(231, 231, 231);
+    font-family: 'Nunito', sans-serif;
+    border-radius: 8px;
+    height: fit-content;
+    max-height: 100px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(102, 102, 102, 0.3);
+}
+
+.note_title{
+    font-weight: 600;
+}
+.note_content{
+    margin: 4px 10px;
+}
+
+.new_note{
+    position: fixed;
+    top: 30px;
+    left: -40px;
+    width: 180px;
+    height: 150px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* border: 1px solid rgb(216, 216, 216); */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.548), -2px -2px 5px rgba(102, 102, 102, 0.548);
+    transform: scale(0);
+    transition: all ease 0.3s;
+}
+
+.new_note_visible{
+    top: 30px;
+    left: 80px;
+    width: 180px;
+    height: 150px;
+    transform: scale(1);
+}
+
+.pinIcon{
+    color:orange;
+    padding-inline:7px;
+    transform:rotate(45deg);
+    cursor: pointer;
+}
+
+.note_title_input{
+    font-family:'McLaren', sans-serif;
+    outline: none;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px dashed rgb(255, 196, 0);
+    width: 80%;
+}
+.note_content_input{
+    font-family:'McLaren', sans-serif;
+    outline: none;
+    padding: 5px;
+    background-color: inherit;
+    border: 1px dashed rgb(255, 196, 0);
+    height: 100%;
+    resize: none;
+}
+
+
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 5px 0;
+    font-size: small;
+    color: silver;
+    font-family: 'McLaren', sans-serif;
+    text-align: center;
+}
