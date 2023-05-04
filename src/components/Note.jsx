@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbtack } from '@fortawesome/free-solid-svg-icons'
 
@@ -12,14 +12,38 @@ function Note(props) {
     )
 }
 
-function NewNote() {
+function NewNote(props) {
+    let i = 4;
+    let [note, setNote] = useState({ title: "", content: "" })
+    let updateNotesList = props.updateNotes;
+
+    function updateNote(event) {
+        let { name: caller, value } = event.target;
+        setNote(prevValue => {
+            return ({
+                ...prevValue,
+                [caller]: value
+            })
+        })
+    }
+
+    function addNote() {
+        let newNote={
+            id:i++,
+            ...note
+        }
+        updateNotesList(prevValue => [...prevValue,newNote])
+    }
+
     return (
         <div className='new_note closeEffect' id="newNote" >
-            <div>
-                <input type="text" className='note_title_input closeEffect' />
-                <FontAwesomeIcon icon={faThumbtack} className='closeEffect pinIcon' />
+            <div className='closeEffect'>
+                <input name="title" value={note.title} onChange={updateNote} type="text" className='note_title_input closeEffect' />
+                <i className='closeEffect pinIcon' onClick={addNote}>
+                    <FontAwesomeIcon icon={faThumbtack} className='pinIcon closeEffect' />
+                </i>
             </div>
-            <textarea type="text" className='note_content_input closeEffect' />
+            <textarea name="content" value={note.content} onChange={updateNote} type="text" className='note_content_input closeEffect' />
         </div>
     )
 }

@@ -7,8 +7,8 @@ root.render(<App />);
 
 document.addEventListener('click', (event) => {
     let caller = event.target.getAttribute("class");
-    if (caller!= null && caller.includes("closeEffect")){
-        
+    if (caller != null && caller.includes("closeEffect")){
+        let i=0;
     }else{
         document.getElementById("newNote").classList.remove("new_note_visible")
     }

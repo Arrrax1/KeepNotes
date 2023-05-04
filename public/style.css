@@ -109,9 +109,16 @@ img {
 
 .pinIcon{
     color:orange;
-    padding-inline:7px;
+    padding-inline:2px;
     transform:rotate(45deg);
     cursor: pointer;
+}
+.pinIcon::before{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
 }
 
 .note_title_input{
