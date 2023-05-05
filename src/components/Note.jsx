@@ -4,10 +4,21 @@ import { faThumbtack } from '@fortawesome/free-solid-svg-icons'
 
 let colors = ["#ffeaa7", "#FFA00022", "#FFA00044"]
 function Note(props) {
+
+    function deleteNote(id){
+        props.updateNotes(prevValue=> prevValue.filter(note=> note.id !== id))
+    }
+
     return (
         <div className='note' style={{ backgroundColor: colors[Math.floor(Math.random() * 3)] }}>
-            <div className='note_title'>{props.title}</div>
-            <div className='note_content'>{props.content}</div>
+            <div style={{ maxHeight: "80px", overflow: "hidden" }}>
+                <div className='note_title'>{props.title}</div>
+                <div className='note_content'>{props.content}</div>
+            </div>
+            <div className='buttons_container'>
+                <button className='note_btn'>Open</button>
+                <button className='note_btn' onClick={()=>{deleteNote(props.id)}}>Delete</button>
+            </div>
         </div>
     )
 }
@@ -28,11 +39,11 @@ function NewNote(props) {
     }
 
     function addNote() {
-        let newNote={
-            id:i++,
+        let newNote = {
+            id: i++,
             ...note
         }
-        updateNotesList(prevValue => [...prevValue,newNote])
+        updateNotesList(prevValue => [...prevValue, newNote])
     }
 
     return (

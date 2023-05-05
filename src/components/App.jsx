@@ -11,7 +11,7 @@ export default function App() {
             <Sidebar />
             <NewNote updateNotes={setNotes}/>
             <div className='notes_container'>
-                {myNotes.map(note => <Note key={note.id} title={note.title} content={note.content} /> )}
+                {myNotes.map(note => <Note id={note.id} updateNotes={setNotes} key={note.id} title={note.title} content={note.content} /> )}
             </div>
             <Footer/>
         </>

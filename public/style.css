@@ -62,6 +62,7 @@ img {
 }
 
 .note{
+    position: relative;
     display: inline-block;
     width: 200px;
     margin: 30px 0 0 30px ;
@@ -70,7 +71,7 @@ img {
     font-family: 'Nunito', sans-serif;
     border-radius: 8px;
     height: fit-content;
-    max-height: 100px;
+    max-height: 150px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(102, 102, 102, 0.3);
 }
@@ -97,6 +98,7 @@ img {
     box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.548), -2px -2px 5px rgba(102, 102, 102, 0.548);
     transform: scale(0);
     transition: all ease 0.3s;
+    z-index: 10;
 }
 
 .new_note_visible{
@@ -140,7 +142,27 @@ img {
     height: 100%;
     resize: none;
 }
+.buttons_container{
+    height: 100%;
+    display: flex;
+    margin: 5px 0 -15px 0;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+.note_btn{
+    background-color: #f5f5f5aa;
+    border: 1px solid orangered;
+    border-radius: 4px;
+    padding: 5px 7px;
+    color: orangered;
+    cursor: pointer;
+}
 
+.note_btn:hover{
+    background-color: orangered;
+    color: white;
+}
 
 
 .footer{
